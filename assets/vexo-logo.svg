@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="silverGloss" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0%" stop-color="#ffffff"/>
+  <stop offset="40%" stop-color="#e2e8f0"/>
+  <stop offset="70%" stop-color="#94a3b8"/>
+  <stop offset="100%" stop-color="#cbd5e1"/>
+</linearGradient>
+<linearGradient id="specularBorder" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+  <stop offset="100%" stop-color="#ffffff" stop-opacity="0.2"/>
+</linearGradient>
+</defs>
+<rect width="200" height="200" rx="44" fill="#080b12"/>
+<rect x="2" y="2" width="196" height="196" rx="42" fill="none" stroke="url(#specularBorder)" stroke-width="3"/>
+<circle cx="100" cy="100" r="82" fill="none" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.5"/>
+<circle cx="100" cy="100" r="86" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-dasharray="4 6" stroke-width="1"/>
+<!-- Stylized Glossy V Emblem -->
+<path d="M52 46 L86 46 L100 128 L114 46 L148 46 L118 154 L82 154 Z" fill="url(#silverGloss)"/>
+<polygon points="100,132 94,154 106,154" fill="#ffffff"/>
+<text x="100" y="180" text-anchor="middle" font-family="'Space Grotesk', -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="4" fill="#ffffff" opacity="0.9">VEXO DEV</text>
+</svg>
