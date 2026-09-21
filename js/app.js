@@ -136,5 +136,24 @@
     });
   }, { threshold: 0.15 });
 
-  revealElements.forEach(el => revealObserver.observe(el));
+  // ==========================================
+  // 8. 3D Model Card View Switcher (Shaded / Wireframe)
+  // ==========================================
+  window.setModelView = function (btnElement, wrapId, mode) {
+    const wrap = document.getElementById(wrapId);
+    if (!wrap) return;
+    wrap.querySelectorAll('.mv-btn').forEach(b => b.classList.remove('active'));
+    if (btnElement) btnElement.classList.add('active');
+
+    const shadedImg = wrap.querySelector('.img-shaded');
+    const wireImg = wrap.querySelector('.img-wireframe');
+
+    if (mode === 'wireframe') {
+      if (shadedImg) shadedImg.classList.remove('active');
+      if (wireImg) wireImg.classList.add('active');
+    } else {
+      if (wireImg) wireImg.classList.remove('active');
+      if (shadedImg) shadedImg.classList.add('active');
+    }
+  };
 })();
