@@ -315,9 +315,9 @@ h1, h2, h3, h4, h5, h6 {
 /* Stats Counter Grid */
 .hero-stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  max-width: 1040px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  max-width: 1120px;
   margin: 0 auto;
 }
 
@@ -420,7 +420,7 @@ section {
 
 @media (max-width: 992px) {
   .hero-stats-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .footer-top {
@@ -454,10 +454,16 @@ section {
   }
 
   .hero-stats-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .footer-top {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-stats-grid {
     grid-template-columns: 1fr;
   }
 }

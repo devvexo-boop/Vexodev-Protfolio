@@ -104,15 +104,19 @@
         <!-- Real Stats Counters from Old Site -->
         <div class="hero-stats-grid">
           <div class="glass-card stat-card">
-            <div class="stat-number">4+</div>
-            <div class="stat-label">Years Experience</div>
+            <div class="stat-number">3+</div>
+            <div class="stat-label">Years in Modelling</div>
+          </div>
+          <div class="glass-card stat-card">
+            <div class="stat-number">8+</div>
+            <div class="stat-label">Complex Models Built</div>
           </div>
           <div class="glass-card stat-card">
             <div class="stat-number">8+</div>
             <div class="stat-label">Systems Built</div>
           </div>
           <div class="glass-card stat-card">
-            <div class="stat-number" style="color: #ffffff; text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);">100%</div>
+            <div class="stat-number" style="color: #ffffff; text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);">95%</div>
             <div class="stat-label">Client Satisfaction</div>
           </div>
           <div class="glass-card stat-card">
@@ -748,7 +752,6 @@
        3D MODELLING SHOWCASE SECTION
        ========================================== -->
   <section id="models">
-    <a id="mesh-viewer" style="position: absolute; top: -80px;"></a>
     <div class="container">
       <div class="section-header">
         <span class="section-tag">3D Portfolio</span>
@@ -1068,86 +1071,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Real-time Interactive Mesh Inspector -->
-      <div style="margin-top: 50px;">
-        <div style="text-align: center; margin-bottom: 28px;">
-          <span class="section-tag" style="font-size: 0.72rem;">Real-time 3D Engine</span>
-          <h3 style="font-size: 1.45rem; color: #ffffff; margin-top: 6px;">Interactive Geometry Inspector</h3>
-          <p style="color: var(--silver-400); font-size: 0.88rem; margin-top: 4px;">Click and drag to orbit in real-time. Switch between solid shading, wireframe, and vertex points.</p>
-        </div>
-
-        <div class="viewer-3d-container" style="margin-top: 0;">
-          <!-- Canvas Viewport -->
-          <div class="glass-card viewer-canvas-card">
-            <div class="viewer-canvas-header">
-              <div class="viewer-status">
-                <span class="live-dot" style="display:inline-block; margin-right:6px;"></span>
-                <span>Viewport: Real-time Projection</span>
-              </div>
-              <div class="viewer-controls-top">
-                <button class="viewer-btn active" data-mode="solid">Solid Shaded</button>
-                <button class="viewer-btn" data-mode="wireframe">Wireframe</button>
-                <button class="viewer-btn" data-mode="points">Points</button>
-                <button class="viewer-btn active" id="btn-auto-rotate">Auto Spin</button>
-              </div>
-            </div>
-
-            <canvas id="asset-canvas"></canvas>
-            <div class="viewer-canvas-hint">Drag with mouse to rotate 3D mesh</div>
-          </div>
-
-          <!-- Sidebar / Model Picker & Specs -->
-          <div class="viewer-sidebar">
-            <div class="glass-card asset-picker-card">
-              <h4>Select 3D Asset</h4>
-
-              <button class="model-select-btn active" data-model="katana" onclick="switchModel('katana')">
-                <span>🗡️ Voidwalker Katana</span>
-                <span style="font-size:0.75rem; color:#cbd5e1;">1.2k Tris</span>
-              </button>
-
-              <button class="model-select-btn" data-model="crate" onclick="switchModel('crate')">
-                <span>📦 Quantum Supply Pod</span>
-                <span style="font-size:0.75rem; color:#cbd5e1;">960 Tris</span>
-              </button>
-
-              <button class="model-select-btn" data-model="helm" onclick="switchModel('helm')">
-                <span>🥽 Apex Cyber Visor</span>
-                <span style="font-size:0.75rem; color:#cbd5e1;">1.5k Tris</span>
-              </button>
-
-              <h4 style="margin-top: 22px;">Mesh Specifications</h4>
-              <ul class="spec-list">
-                <li>
-                  <span>Active Model:</span>
-                  <span id="spec-model-name">Voidwalker Katana</span>
-                </li>
-                <li>
-                  <span>Triangles:</span>
-                  <span id="spec-triangles">1,240 Tris</span>
-                </li>
-                <li>
-                  <span>Vertices:</span>
-                  <span id="spec-vertices">680 Verts</span>
-                </li>
-                <li>
-                  <span>Category:</span>
-                  <span id="spec-category">Weapon / Combat UGC</span>
-                </li>
-                <li>
-                  <span>PBR Shading:</span>
-                  <span id="spec-texture">PBR Metallic 2K</span>
-                </li>
-                <li>
-                  <span>Deliverables:</span>
-                  <span>.FBX, .OBJ, .RBXM</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -1215,14 +1138,98 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Frequently Asked Questions</span>
-        <h2 class="section-title">Commission FAQ</h2>
-        <p class="section-desc">Clear commission details, deliverables, payment terms, and warranty coverage.</p>
+        <h2 class="section-title">Commission & Modelling FAQ</h2>
+        <p class="section-desc">Clear commission details, 3D modelling specs, deliverables, payment terms, and warranty coverage.</p>
       </div>
 
       <div class="faq-list">
+        <!-- Modeling FAQ 1: Software & Deliverables -->
         <div class="glass-card faq-item active">
           <button class="faq-question">
-            <span>What payment methods do you accept?</span>
+            <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+              <span class="model-tag" style="font-size:0.68rem; margin:0;">3D Modelling</span>
+              What 3D software and file formats do you deliver for models?
+            </span>
+            <span class="faq-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            All 3D assets are modeled from scratch in <strong>Blender 3D</strong> with clean, quad-dominant topology. Deliverables include industry-standard <strong>.FBX</strong>, <strong>.OBJ</strong>, high-res PBR texture maps (Base Color, Normal, Roughness, Metalness), and ready-to-import <strong>.RBXM</strong> / Roblox Studio model packages with collisions, mesh parts, and scaling pre-configured.
+          </div>
+        </div>
+
+        <!-- Modeling FAQ 2: Optimization -->
+        <div class="glass-card faq-item">
+          <button class="faq-question">
+            <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+              <span class="model-tag" style="font-size:0.68rem; margin:0;">Optimization</span>
+              Are your 3D models optimized for low-lag Roblox and mobile devices?
+            </span>
+            <span class="faq-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            Yes, 100%. Every model strictly adheres to Roblox performance budgets — typically <strong>sub-3,000 to 5,000 tris</strong> for character bundles/avatars and <strong>sub-1,000 to 2,000 tris</strong> for weapons and props. Clean edge loops, minimal draw calls, and optimized UV maps ensure maximum frame rates on mobile, console, and PC.
+          </div>
+        </div>
+
+        <!-- Modeling FAQ 3: Rigging & Layered Clothing -->
+        <div class="glass-card faq-item">
+          <button class="faq-question">
+            <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+              <span class="model-tag" style="font-size:0.68rem; margin:0;">Rigging & UGC</span>
+              Do you provide custom rigging, skinning, and Layered Clothing setup?
+            </span>
+            <span class="faq-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            Yes! We provide full skeletal rigging for Roblox <strong>R15 and R6</strong> humanoid avatars, custom vertex weight painting for natural bending with zero mesh clipping, and standard Outer/Inner Cage meshes for official <strong>Roblox Layered Clothing (3D UGC)</strong> compatibility.
+          </div>
+        </div>
+
+        <!-- Modeling FAQ 4: Concept Art References -->
+        <div class="glass-card faq-item">
+          <button class="faq-question">
+            <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+              <span class="model-tag" style="font-size:0.68rem; margin:0;">Custom Concepts</span>
+              Can you model from 2D concept art, reference images, or sketches?
+            </span>
+            <span class="faq-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            Absolutely. We work from hand-drawn concept sketches, photo references, mood boards, or written briefs. Whether you need stylized anime outfits, tactical military equipment, fantasy RPG weapons, or cute simulator pets, we faithfully replicate your project's art direction with a <strong>95% client satisfaction rate</strong>.
+          </div>
+        </div>
+
+        <!-- Modeling FAQ 5: Turnaround Time -->
+        <div class="glass-card faq-item">
+          <button class="faq-question">
+            <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+              <span class="model-tag" style="font-size:0.68rem; margin:0;">Turnaround</span>
+              What is your typical turnaround time for a 3D model commission?
+            </span>
+            <span class="faq-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            Small props, weapons, and UGC accessories typically take <strong>24 to 48 hours</strong>. Full custom avatars, complex armor suits, or rigged creature bundles take <strong>3 to 5 days</strong>. Frequent progress snapshots and Blender viewport updates are shared via Discord for your feedback throughout the process.
+          </div>
+        </div>
+
+        <!-- General FAQ 6: Payment Methods -->
+        <div class="glass-card faq-item">
+          <button class="faq-question">
+            <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+              <span class="model-tag" style="font-size:0.68rem; margin:0;">Payment</span>
+              What payment methods do you accept?
+            </span>
             <span class="faq-icon">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </span>
@@ -1232,21 +1239,29 @@
           </div>
         </div>
 
+        <!-- General FAQ 7: Support & Bug Fixing -->
         <div class="glass-card faq-item">
           <button class="faq-question">
-            <span>How does ongoing support and bug fixing work?</span>
+            <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+              <span class="model-tag" style="font-size:0.68rem; margin:0;">Warranty</span>
+              How does ongoing support and bug fixing work?
+            </span>
             <span class="faq-icon">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </span>
           </button>
           <div class="faq-answer">
-            Every delivered system comes with <strong>free bug fixes and integration assistance</strong>. If any issue arises from the delivered code or system, Vexo addresses it promptly to ensure smooth integration into your game.
+            Every delivered system and 3D model comes with <strong>free bug fixes and integration assistance</strong>. If any issue arises from delivered assets or code, Vexo addresses it promptly to ensure smooth integration into your game.
           </div>
         </div>
 
+        <!-- General FAQ 8: Code Quality -->
         <div class="glass-card faq-item">
           <button class="faq-question">
-            <span>Will the code be clean and modular?</span>
+            <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+              <span class="model-tag" style="font-size:0.68rem; margin:0;">Scripting</span>
+              Will the scripting code be clean, typed, and modular?
+            </span>
             <span class="faq-icon">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </span>
@@ -1362,6 +1377,5 @@
   <!-- Scripts -->
   <script src="js/app.js"></script>
   <script src="js/showcase.js"></script>
-  <script src="js/three-viewer.js"></script>
 </body>
 </html>
