@@ -1084,6 +1084,11 @@
   pointer-events: none;
 }
 
+.model-img-layer.img-contain {
+  object-fit: contain;
+  padding: 16px;
+}
+
 .model-img-layer.active {
   opacity: 1;
   pointer-events: auto;
