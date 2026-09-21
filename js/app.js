@@ -137,7 +137,7 @@
   }, { threshold: 0.15 });
 
   // ==========================================
-  // 8. 3D Model Card View Switcher (Shaded / Wireframe)
+  // 8. 3D Model Card View Switcher (Render / Wireframe / Viewport)
   // ==========================================
   window.setModelView = function (btnElement, wrapId, mode) {
     const wrap = document.getElementById(wrapId);
@@ -145,15 +145,16 @@
     wrap.querySelectorAll('.mv-btn').forEach(b => b.classList.remove('active'));
     if (btnElement) btnElement.classList.add('active');
 
-    const shadedImg = wrap.querySelector('.img-shaded');
-    const wireImg = wrap.querySelector('.img-wireframe');
+    wrap.querySelectorAll('.model-img-layer').forEach(img => img.classList.remove('active'));
 
-    if (mode === 'wireframe') {
-      if (shadedImg) shadedImg.classList.remove('active');
-      if (wireImg) wireImg.classList.add('active');
-    } else {
-      if (wireImg) wireImg.classList.remove('active');
-      if (shadedImg) shadedImg.classList.add('active');
+    let target = wrap.querySelector(`.img-${mode}`);
+    if (!target && mode === 'shaded') target = wrap.querySelector('.img-render');
+    if (!target && mode === 'render') target = wrap.querySelector('.img-shaded');
+    if (!target && mode === 'wireframe') target = wrap.querySelector('.img-wireframe');
+    if (!target && mode === 'viewport') target = wrap.querySelector('.img-viewport') || wrap.querySelector('.img-wireframe');
+
+    if (target) {
+      target.classList.add('active');
     }
   };
 })();

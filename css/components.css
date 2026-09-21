@@ -1047,14 +1047,15 @@
   border: none;
   color: var(--silver-400);
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  padding: 4px 9px;
+  padding: 3px 8px;
   border-radius: 5px;
   cursor: pointer;
   transition: all var(--transition-fast);
+  white-space: nowrap;
 }
 
 .mv-btn:hover {
@@ -1077,7 +1078,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
   transition: opacity 0.35s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   opacity: 0;
   pointer-events: none;
