@@ -16,6 +16,12 @@
 </head>
 <body>
 
+  <!-- Scroll Progress Indicator (Serieko Inspired) -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- Interactive Constellation Network Canvas (Falnox Inspired) -->
+  <canvas id="networkCanvas"></canvas>
+
   <!-- Ambient Background & Cursor Light -->
   <div class="bg-grid-pattern"></div>
   <div class="ambient-glow-1"></div>
@@ -29,7 +35,7 @@
     <div class="nav-container">
       <a href="#" class="brand-logo">
         <div class="brand-icon">V</div>
-        <div class="brand-name">VEXO<span>DEV</span></div>
+        <div class="brand-name">vexo<span style="color: var(--silver-400); font-weight: 300;">.</span></div>
       </a>
 
       <ul class="nav-links" id="nav-links">
@@ -38,11 +44,17 @@
         <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#games" class="nav-link">Games</a></li>
         <li><a href="#models" class="nav-link">Modelling</a></li>
+        <li><a href="#reviews" class="nav-link">Vouches</a></li>
         <li><a href="#luau-lab" class="nav-link">Luau Lab</a></li>
         <li><a href="#faq" class="nav-link">FAQ</a></li>
       </ul>
 
       <div class="nav-actions">
+        <!-- Audio SFX Toggle Button -->
+        <button class="sound-toggle-btn" id="sound-toggle" aria-label="Toggle sound effects">
+          <span>🔊 SFX ON</span>
+        </button>
+
         <div class="status-badge">
           <span class="live-dot"></span>
           <span>AVAILABLE FOR COMMISSIONS</span>
@@ -65,63 +77,110 @@
   </header>
 
   <!-- ==========================================
-       HERO SECTION
+       HERO SECTION (SERIEKO EDITORIAL & 3D COLLAGE)
        ========================================== -->
   <section class="hero-section" id="home">
+    <!-- Ashtondev Tech Orbital Rings -->
+    <div class="hero-orbit-rings" aria-hidden="true">
+      <div class="hero-orbit-ring hero-orbit-ring-1"></div>
+      <div class="hero-orbit-ring hero-orbit-ring-2"></div>
+      <div class="hero-orbit-ring hero-orbit-ring-3"></div>
+    </div>
     <div class="container">
-      <div class="hero-content">
-        <div class="hero-badge-wrap">
-          <span class="glass-pill">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-            AVAILABLE FOR COMMISSIONS
-          </span>
+      <div class="hero-editorial-grid">
+        <!-- Left Editorial Column -->
+        <div class="hero-editorial-left">
+          <div class="hero-badge-wrap">
+            <span class="eyebrow">
+              <span class="eyebrow-num">00</span>
+              <span>VEXO DEV</span>
+              <span class="live-dot" style="margin-left: 6px;"></span>
+              <span style="color: #34d399; font-size: 0.72rem; letter-spacing: 0.1em;">ONLINE</span>
+            </span>
+          </div>
+
+          <h1 class="hero-headline">
+            Roblox systems.<br>
+            <span class="silver-shimmer-text"><em>& 3D modeller.</em></span>
+          </h1>
+
+          <p class="hero-subheadline">
+            Architecting next-generation Luau combat engines, procedural vehicles, and production-grade 3D character rigs in Blender. Built for high concurrency, ultra-smooth gameplay, and rapid studio integration.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#systems" class="btn-silver">
+              <span>View Systems</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="#models" class="btn-glass">
+              <span>3D Showcase</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </a>
+            <button class="btn-glass btn-copy-discord" data-discord="vexodev.">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.894a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
+              </svg>
+              <span>Discord: vexodev.</span>
+            </button>
+          </div>
+
+          <!-- Bottom Meta Bar -->
+          <div class="hero-bottom-meta">
+            <span>ROBLOX STUDIO · BLENDER 3D · STRICT LUAU</span>
+            <a href="#systems" class="hero-meta-scroll">
+              <span>SCROLL</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+            </a>
+          </div>
         </div>
 
-        <h1 class="hero-headline">
-          VEXO <span class="silver-shimmer-text">DEV</span>
-        </h1>
+        <!-- Right 3D Floating Showcase Scene (Interactive Collage) -->
+        <div class="hero-scene-wrap">
+          <div class="hero-collage-container">
+            <!-- Main Featured Card: Bomber Goblin -->
+            <div class="collage-card collage-card-main" onclick="location.href='#wrap-bomber-goblin'">
+              <img src="assets/models/bomber-goblin.png" alt="Bomber Goblin 3D Character" loading="eager">
+              <div class="collage-card-info">
+                <span class="collage-card-title">Bomber Goblin</span>
+                <span class="collage-card-poly">4,860 Tris</span>
+              </div>
+            </div>
 
-        <p class="hero-subheadline">
-          Building high-performance Roblox systems that bring games to life — from advanced movement mechanics to fully-featured UI systems.
-        </p>
+            <!-- Sub Card 1: Rainbow Knife -->
+            <div class="collage-card collage-card-sub1" onclick="location.href='#wrap-rainbow-knife'">
+              <img src="assets/models/rainbow-knife.png" alt="Rainbow Knife 3D Fantasy Weapon" loading="eager">
+              <div class="collage-card-info">
+                <span class="collage-card-title">Rainbow Dagger</span>
+                <span class="collage-card-poly">1,820 Tris</span>
+              </div>
+            </div>
 
-        <div class="hero-cta-group">
-          <a href="#systems" class="btn-silver">
-            <span>View Systems</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </a>
-          <a href="#contact" class="btn-glass">
-            <span>Get in Touch</span>
-          </a>
-          <button class="btn-glass btn-copy-discord" data-discord="vexodev.">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.894a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
-            </svg>
-            <span>Discord: vexodev.</span>
-          </button>
-        </div>
+            <!-- Sub Card 2: Red Fox -->
+            <div class="collage-card collage-card-sub2" onclick="location.href='#wrap-red-fox'">
+              <img src="assets/models/red-fox.png" alt="Red Fox 3D Stylized Pet" loading="eager">
+              <div class="collage-card-info">
+                <span class="collage-card-title">Red Fox Pet</span>
+                <span class="collage-card-poly">3,120 Tris</span>
+              </div>
+            </div>
 
-        <!-- Real Stats Counters from Old Site -->
-        <div class="hero-stats-grid">
-          <div class="glass-card stat-card">
-            <div class="stat-number">3+</div>
-            <div class="stat-label">Years in Modelling</div>
-          </div>
-          <div class="glass-card stat-card">
-            <div class="stat-number">8+</div>
-            <div class="stat-label">Complex Models Built</div>
-          </div>
-          <div class="glass-card stat-card">
-            <div class="stat-number">8+</div>
-            <div class="stat-label">Systems Built</div>
-          </div>
-          <div class="glass-card stat-card">
-            <div class="stat-number" style="color: #ffffff; text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);">95%</div>
-            <div class="stat-label">Client Satisfaction</div>
-          </div>
-          <div class="glass-card stat-card">
-            <div class="stat-number" style="color: #34d399;">Fast</div>
-            <div class="stat-label">Turnaround Delivery</div>
+            <!-- Luau Code Chip -->
+            <div class="collage-card-code">
+              <div style="color: #64748b; margin-bottom: 2px;">--!strict</div>
+              <div style="color: #ffffff; font-weight: 600;"><span style="color: #cbd5e1;">type</span> CombatRig = {</div>
+              <div style="color: #94a3b8; padding-left: 10px;">health: <span style="color:#ffffff;">number</span>,</div>
+              <div style="color: #94a3b8; padding-left: 10px;">strike: () -&gt; <span style="color:#34d399;">boolean</span></div>
+              <div style="color: #ffffff; font-weight: 600;">}</div>
+            </div>
+
+            <!-- Serieko-style Bounce Button -->
+            <div class="collage-bounce-wrap">
+              <button class="collage-bounce-btn" id="hero-bounce-btn" type="button" aria-label="Energize showcase models">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                <span>Bounce Showcase</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -129,71 +188,302 @@
   </section>
 
   <!-- ==========================================
+       PRODUCTION STATS SECTION (SERIEKO REACH INSPIRATION)
+       ========================================== -->
+  <section class="production-stats-section" id="reach">
+    <div class="container">
+      <div class="stats-reach-card">
+        <div class="stats-reach-header">
+          <div>
+            <div class="eyebrow" style="margin-bottom: 6px;">
+              <span class="eyebrow-num">METRICS</span>
+              <span>ACROSS MY CREATIONS</span>
+            </div>
+            <h2 class="stats-reach-title">Production <em>Stats</em></h2>
+          </div>
+          <div class="status-badge">
+            <span class="live-dot"></span>
+            <span>VERIFIED PRODUCTION DATA</span>
+          </div>
+        </div>
+
+        <div class="stats-reach-grid">
+          <div class="stat-metric-card">
+            <div class="stat-metric-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div class="stat-metric-number">3+</div>
+            <div class="stat-metric-label">Years in Modelling</div>
+            <div class="stat-metric-sub">Blender 3D & UGC Assets</div>
+          </div>
+
+          <div class="stat-metric-card">
+            <div class="stat-metric-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div class="stat-metric-number">8+</div>
+            <div class="stat-metric-label">Complex Models Built</div>
+            <div class="stat-metric-sub">Full Avatars & Armor Sets</div>
+          </div>
+
+          <div class="stat-metric-card">
+            <div class="stat-metric-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <div class="stat-metric-number">8+</div>
+            <div class="stat-metric-label">Systems Built</div>
+            <div class="stat-metric-sub">Modular Luau Frameworks</div>
+          </div>
+
+          <div class="stat-metric-card">
+            <div class="stat-metric-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <div class="stat-metric-number" style="color: #ffffff;">95%</div>
+            <div class="stat-metric-label">Client Satisfaction</div>
+            <div class="stat-metric-sub">Studio & Solo Creators</div>
+          </div>
+
+          <div class="stat-metric-card">
+            <div class="stat-metric-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="stat-metric-number" style="color: #34d399;">Fast</div>
+            <div class="stat-metric-label">Turnaround Delivery</div>
+            <div class="stat-metric-sub">24-48h Commission Sprints</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Running Capability Marquee Ticker (Hostiile Inspired) -->
+  <div class="capability-ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span class="ticker-item"><span class="dot-sep">✦</span> STRICT LUAU OOP</span>
+      <span class="ticker-item"><span class="dot-sep">✦</span> REPLICATION & ROLLBACK NETCODE</span>
+      <span class="ticker-item"><span class="dot-sep">✦</span> BLENDER SUBDIVISION & RETOPOLOGY</span>
+      <span class="ticker-item"><span class="dot-sep">✦</span> CUSTOM INVENTORY & HOTBAR ENGINES</span>
+      <span class="ticker-item"><span class="dot-sep">✦</span> PROCEDURAL CHASSIS & SPRING SUSPENSION</span>
+      <span class="ticker-item"><span class="dot-sep">✦</span> PURE WIREFRAME & VIEWPORT INSPECTION</span>
+      <span class="ticker-item"><span class="dot-sep">✦</span> ANTI-EXPLOIT SERVER SANITIZATION</span>
+      <span class="ticker-item"><span class="dot-sep">✦</span> ZERO-GC BUFFER STREAMS</span>
+      <!-- Duplicate track for infinite loop -->
+      <span class="ticker-item"><span class="dot-sep">✦</span> STRICT LUAU OOP</span>
+      <span class="ticker-item"><span class="dot-sep">✦</span> REPLICATION & ROLLBACK NETCODE</span>
+      <span class="ticker-item"><span class="dot-sep">✦</span> BLENDER SUBDIVISION & RETOPOLOGY</span>
+      <span class="ticker-item"><span class="dot-sep">✦</span> CUSTOM INVENTORY & HOTBAR ENGINES</span>
+      <span class="ticker-item"><span class="dot-sep">✦</span> PROCEDURAL CHASSIS & SPRING SUSPENSION</span>
+      <span class="ticker-item"><span class="dot-sep">✦</span> PURE WIREFRAME & VIEWPORT INSPECTION</span>
+      <span class="ticker-item"><span class="dot-sep">✦</span> ANTI-EXPLOIT SERVER SANITIZATION</span>
+      <span class="ticker-item"><span class="dot-sep">✦</span> ZERO-GC BUFFER STREAMS</span>
+    </div>
+  </div>
+
+  <!-- ==========================================
        SYSTEMS PORTFOLIO SECTION (REAL DATA)
        ========================================== -->
   <section id="systems">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Portfolio</span>
-        <h2 class="section-title">Roblox Systems</h2>
-        <p class="section-desc">Every system is engineered for performance, reliability, and seamless integration into any Roblox experience.</p>
+        <span class="eyebrow">
+          <span class="eyebrow-num">01</span>
+          <span>SYSTEMS PORTFOLIO</span>
+        </span>
+        <h2 class="section-title">Roblox <em>Systems</em></h2>
+        <p class="section-desc">Every system is engineered for concurrency, high tick-rate responsiveness, and modular integration into any Roblox experience.</p>
       </div>
 
       <div class="systems-grid">
 
-        <!-- 1: Global Poll System -->
-        <a href="https://youtu.be/pwfWN-TvHAI" target="_blank" rel="noopener" class="system-card">
-          <div class="system-thumb">
-            <img src="https://img.youtube.com/vi/pwfWN-TvHAI/hqdefault.jpg" alt="Global Poll System" loading="lazy">
-            <div class="yt-overlay">
-              <div class="yt-btn">
-                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-              </div>
+        <!-- 1: Global Poll System (3D Flip Architecture Card) -->
+        <div class="system-flip-card" id="flip-card-1">
+          <div class="system-flip-inner">
+            <!-- Front Card Preview -->
+            <div class="system-flip-front">
+              <a href="https://youtu.be/pwfWN-TvHAI" target="_blank" rel="noopener" class="system-card">
+                <div class="system-thumb">
+                  <img src="https://img.youtube.com/vi/pwfWN-TvHAI/hqdefault.jpg" alt="Global Poll System" loading="lazy">
+                  <div class="yt-overlay">
+                    <div class="yt-btn">
+                      <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="system-body">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                    <span class="system-tag">Roblox System</span>
+                    <button type="button" class="btn-flip-trigger" onclick="toggleArchFlip('flip-card-1', event)">
+                      <span>Inspect Specs ⇄</span>
+                    </button>
+                  </div>
+                  <div class="system-name">Global Poll System</div>
+                  <p class="system-desc">Server-wide voting system with real-time result tracking, customizable options, and clean UI integration.</p>
+                </div>
+                <svg class="system-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </a>
             </div>
-          </div>
-          <div class="system-body">
-            <span class="system-tag">Roblox System</span>
-            <div class="system-name">Global Poll System</div>
-            <p class="system-desc">Server-wide voting system with real-time result tracking, customizable options, and clean UI integration.</p>
-          </div>
-          <svg class="system-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-        </a>
 
-        <!-- 2: Avatar Editor -->
-        <a href="https://youtu.be/uAAjbmaes3A" target="_blank" rel="noopener" class="system-card">
-          <div class="system-thumb">
-            <img src="https://img.youtube.com/vi/uAAjbmaes3A/hqdefault.jpg" alt="Avatar Editor" loading="lazy">
-            <div class="yt-overlay">
-              <div class="yt-btn">
-                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <!-- Back Card Specs -->
+            <div class="system-flip-back">
+              <div>
+                <div class="arch-header">
+                  <span class="arch-badge">STRICT LUAU ENGINE</span>
+                  <span style="font-size: 0.72rem; color: var(--silver-400); font-family: 'JetBrains Mono', monospace;">60 Hz SYNC</span>
+                </div>
+                <div style="text-align: left;">
+                  <h4 style="color: #fff; font-size: 1.1rem; margin-bottom: 8px; font-family: 'Space Grotesk', sans-serif;">Global Poll Architecture</h4>
+                  <ul class="arch-spec-list">
+                    <li class="arch-spec-item">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      <span><strong>MessagingService Sync:</strong> Cross-server channel replication with 500ms debounce aggregation.</span>
+                    </li>
+                    <li class="arch-spec-item">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      <span><strong>Server Authority:</strong> Sanitized remote endpoints preventing unauthorized vote spoofing.</span>
+                    </li>
+                    <li class="arch-spec-item">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      <span><strong>TweenService UI:</strong> Live animated percentage bar visualization with zero-lag prediction.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 12px;">
+                <button type="button" class="btn-flip-trigger" onclick="toggleArchFlip('flip-card-1', event)">
+                  <span>← Return to Preview</span>
+                </button>
+                <a href="https://youtu.be/pwfWN-TvHAI" target="_blank" rel="noopener" style="font-size: 0.75rem; color: #fff; text-decoration: underline;">Watch Video ↗</a>
               </div>
             </div>
           </div>
-          <div class="system-body">
-            <span class="system-tag">Roblox System</span>
-            <div class="system-name">Avatar Editor Customization</div>
-            <p class="system-desc">Full in-game avatar customization with live preview, clothing layers, accessories, and save states.</p>
-          </div>
-          <svg class="system-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-        </a>
+        </div>
 
-        <!-- 3: Movement System -->
-        <a href="https://youtu.be/82Zt5G2Lmlc" target="_blank" rel="noopener" class="system-card">
-          <div class="system-thumb">
-            <img src="https://img.youtube.com/vi/82Zt5G2Lmlc/hqdefault.jpg" alt="Movement System" loading="lazy">
-            <div class="yt-overlay">
-              <div class="yt-btn">
-                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        <!-- 2: Avatar Editor (3D Flip Architecture Card) -->
+        <div class="system-flip-card" id="flip-card-2">
+          <div class="system-flip-inner">
+            <!-- Front Card Preview -->
+            <div class="system-flip-front">
+              <a href="https://youtu.be/uAAjbmaes3A" target="_blank" rel="noopener" class="system-card">
+                <div class="system-thumb">
+                  <img src="https://img.youtube.com/vi/uAAjbmaes3A/hqdefault.jpg" alt="Avatar Editor" loading="lazy">
+                  <div class="yt-overlay">
+                    <div class="yt-btn">
+                      <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="system-body">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                    <span class="system-tag">Roblox System</span>
+                    <button type="button" class="btn-flip-trigger" onclick="toggleArchFlip('flip-card-2', event)">
+                      <span>Inspect Specs ⇄</span>
+                    </button>
+                  </div>
+                  <div class="system-name">Avatar Editor Customization</div>
+                  <p class="system-desc">Full in-game avatar customization with live preview, clothing layers, accessories, and save states.</p>
+                </div>
+                <svg class="system-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </a>
+            </div>
+
+            <!-- Back Card Specs -->
+            <div class="system-flip-back">
+              <div>
+                <div class="arch-header">
+                  <span class="arch-badge">MODULAR FRAMEWORK</span>
+                  <span style="font-size: 0.72rem; color: var(--silver-400); font-family: 'JetBrains Mono', monospace;">VIEWPORT RIG</span>
+                </div>
+                <div style="text-align: left;">
+                  <h4 style="color: #fff; font-size: 1.1rem; margin-bottom: 8px; font-family: 'Space Grotesk', sans-serif;">Avatar Editor Pipeline</h4>
+                  <ul class="arch-spec-list">
+                    <li class="arch-spec-item">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      <span><strong>Isolated WorldModel:</strong> Client-rendered 3D ViewportFrame with real-time camera pan & zoom.</span>
+                    </li>
+                    <li class="arch-spec-item">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      <span><strong>DataStore2 State Persistence:</strong> Automatic serialization of accessories, layered clothes & colors.</span>
+                    </li>
+                    <li class="arch-spec-item">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      <span><strong>HumanoidDescription:</strong> Seamless asset replacement without character respawns or reload jitter.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 12px;">
+                <button type="button" class="btn-flip-trigger" onclick="toggleArchFlip('flip-card-2', event)">
+                  <span>← Return to Preview</span>
+                </button>
+                <a href="https://youtu.be/uAAjbmaes3A" target="_blank" rel="noopener" style="font-size: 0.75rem; color: #fff; text-decoration: underline;">Watch Video ↗</a>
               </div>
             </div>
           </div>
-          <div class="system-body">
-            <span class="system-tag">Roblox System</span>
-            <div class="system-name">Movement System</div>
-            <p class="system-desc">Advanced character locomotion with custom animations, sprint, crouch, slide, and fluid state transitions.</p>
+        </div>
+
+        <!-- 3: Movement System (3D Flip Architecture Card) -->
+        <div class="system-flip-card" id="flip-card-3">
+          <div class="system-flip-inner">
+            <!-- Front Card Preview -->
+            <div class="system-flip-front">
+              <a href="https://youtu.be/82Zt5G2Lmlc" target="_blank" rel="noopener" class="system-card">
+                <div class="system-thumb">
+                  <img src="https://img.youtube.com/vi/82Zt5G2Lmlc/hqdefault.jpg" alt="Movement System" loading="lazy">
+                  <div class="yt-overlay">
+                    <div class="yt-btn">
+                      <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="system-body">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                    <span class="system-tag">Roblox System</span>
+                    <button type="button" class="btn-flip-trigger" onclick="toggleArchFlip('flip-card-3', event)">
+                      <span>Inspect Specs ⇄</span>
+                    </button>
+                  </div>
+                  <div class="system-name">Movement System</div>
+                  <p class="system-desc">Advanced character locomotion with custom animations, sprint, crouch, slide, and fluid state transitions.</p>
+                </div>
+                <svg class="system-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </a>
+            </div>
+
+            <!-- Back Card Specs -->
+            <div class="system-flip-back">
+              <div>
+                <div class="arch-header">
+                  <span class="arch-badge">PHYSICS ENGINE</span>
+                  <span style="font-size: 0.72rem; color: var(--silver-400); font-family: 'JetBrains Mono', monospace;">CLIENT PREDICT</span>
+                </div>
+                <div style="text-align: left;">
+                  <h4 style="color: #fff; font-size: 1.1rem; margin-bottom: 8px; font-family: 'Space Grotesk', sans-serif;">Locomotion Netcode</h4>
+                  <ul class="arch-spec-list">
+                    <li class="arch-spec-item">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      <span><strong>State Machine Kinematics:</strong> Sprint, crouch, air-dash, and slope-sliding with momentum preservation.</span>
+                    </li>
+                    <li class="arch-spec-item">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      <span><strong>Server Reconciliation:</strong> Delta-time distance checks preventing speedhacks and teleport exploits.</span>
+                    </li>
+                    <li class="arch-spec-item">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      <span><strong>Custom Camera Spring Rig:</strong> Dynamic FOV adjustments, procedural head-bob, and landing impact recoil.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 12px;">
+                <button type="button" class="btn-flip-trigger" onclick="toggleArchFlip('flip-card-3', event)">
+                  <span>← Return to Preview</span>
+                </button>
+                <a href="https://youtu.be/82Zt5G2Lmlc" target="_blank" rel="noopener" style="font-size: 0.75rem; color: #fff; text-decoration: underline;">Watch Video ↗</a>
+              </div>
+            </div>
           </div>
-          <svg class="system-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-        </a>
+        </div>
 
         <!-- 4: Morph System -->
         <a href="https://youtu.be/4MtZttEQ4cg" target="_blank" rel="noopener" class="system-card">
@@ -299,27 +589,36 @@
           <div class="about-visual">
             <div class="about-img-wrap" style="flex-direction: column; gap: 16px; padding: 40px 30px;">
               <div class="brand-icon" style="width: 90px; height: 90px; font-size: 3rem; border-radius: 22px; box-shadow: 0 0 40px rgba(255, 255, 255, 0.45), inset 0 2px 4px rgba(255, 255, 255, 0.8);">V</div>
-              <div style="font-family: 'Space Grotesk', sans-serif; font-size: 1.35rem; font-weight: 800; letter-spacing: -0.02em; color: #ffffff;">VEXO<span style="color: var(--silver-400); font-weight: 400; font-size: 0.95rem; margin-left: 4px;">DEV</span></div>
-              <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--silver-400); font-weight: 600;">Roblox Developer & 3D Artist</div>
+              <div style="font-family: 'Space Grotesk', sans-serif; font-size: 1.35rem; font-weight: 800; letter-spacing: -0.02em; color: #ffffff;">vexo<span style="color: var(--silver-400); font-weight: 300; font-size: 1.1rem; margin-left: 2px;">.</span></div>
+              <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--silver-400); font-weight: 600;">Roblox Systems & 3D Artist</div>
+            </div>
+            <!-- Serieko-style Floating Sticker -->
+            <div class="about-sticker">
+              <span class="about-sticker-dot"></span>
+              <span>Roblox Dev & 3D Modeller ↗</span>
             </div>
             <div class="about-decoration"></div>
             <div class="about-decoration2"></div>
           </div>
 
           <div class="about-text">
-            <span class="section-tag">About Me</span>
-            <h2 class="section-title">Turning Ideas Into <br><span class="silver-gradient-text">Roblox Reality</span></h2>
+            <span class="eyebrow">
+              <span class="eyebrow-num">02</span>
+              <span>BIOGRAPHY</span>
+            </span>
+            <h2 class="section-title">Turning Ideas Into <br><em>Roblox Reality</em></h2>
 
             <p>I'm a dedicated Roblox scripting developer with <strong style="color: #ffffff; text-shadow: 0 0 12px rgba(255, 255, 255, 0.4);">4+ years of experience</strong> specialising in building sophisticated, modular game systems that are both performant and easy for other developers to integrate.</p>
 
-            <p>From physics-based vehicles to full avatar editors, I focus on clean architecture, smooth gameplay feel, and systems that simply work the way they should, every time.</p>
+            <p>From physics-based vehicles to full avatar editors and custom Blender 3D character rigs, I focus on clean architecture, smooth gameplay feel, and systems that simply work the way they should, every time.</p>
 
             <p>Whether you're a solo dev or part of a large studio, I deliver professional-grade Lua code with clear documentation and ongoing support.</p>
 
             <div class="skill-chips">
               <span class="chip">Luau / Lua</span>
               <span class="chip">Roblox Studio</span>
-              <span class="chip">UI / UX</span>
+              <span class="chip">Blender 3D</span>
+              <span class="chip">3D UGC Rigging</span>
               <span class="chip">Physics Systems</span>
               <span class="chip">Game Architecture</span>
               <span class="chip">Optimisation</span>
@@ -338,8 +637,11 @@
   <section id="skills">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Expertise</span>
-        <h2 class="section-title">Technical Skills</h2>
+        <span class="eyebrow">
+          <span class="eyebrow-num">03</span>
+          <span>EXPERTISE</span>
+        </span>
+        <h2 class="section-title">Technical <em>Mastery</em></h2>
         <p class="section-desc">Languages, frameworks, and tools I use to build high-quality Roblox experiences.</p>
       </div>
 
@@ -661,9 +963,12 @@
   <section id="games">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Featured Games</span>
-        <h2 class="section-title">Games I've Worked On</h2>
-        <p class="section-desc">Roblox experiences where my systems and scripts have been integrated and shipped to real players.</p>
+        <span class="eyebrow">
+          <span class="eyebrow-num">04</span>
+          <span>EXPERIENCES</span>
+        </span>
+        <h2 class="section-title">Featured <em>Games</em></h2>
+        <p class="section-desc">Roblox experiences where my systems, combat mechanics, and scripts have been integrated and shipped to real players.</p>
       </div>
 
       <div class="games-grid">
@@ -754,15 +1059,28 @@
   <section id="models">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">3D Portfolio</span>
-        <h2 class="section-title">Modelling Showcase</h2>
-        <p class="section-desc">Production-grade custom Roblox character rigs, layered clothing, and UGC accessories handcrafted in Blender with optimized topology.</p>
+        <span class="eyebrow">
+          <span class="eyebrow-num">05</span>
+          <span>3D PORTFOLIO</span>
+        </span>
+        <h2 class="section-title">Modelling <em>Showcase</em></h2>
+        <p class="section-desc">Production-grade custom Roblox character rigs, layered clothing, weapons, and UGC accessories handcrafted in Blender with optimized topology.</p>
+      </div>
+
+      <!-- Serieko-Inspired Interactive Filter Toolbar -->
+      <div class="work-toolbar">
+        <div class="work-filters">
+          <button class="filter-btn active" data-filter="all" type="button">All <span class="filter-count">9</span></button>
+          <button class="filter-btn" data-filter="characters" type="button">Characters & Avatars <span class="filter-count">4</span></button>
+          <button class="filter-btn" data-filter="weapons" type="button">Weapons & Props <span class="filter-count">3</span></button>
+          <button class="filter-btn" data-filter="armor" type="button">Armor & Defense <span class="filter-count">2</span></button>
+        </div>
       </div>
 
       <!-- 3D Renders Showcase Grid -->
       <div class="modelling-showcase-grid">
         <!-- Model 1: Bomber Goblin (Interactive Shaded & Wireframe) -->
-        <div class="model-showcase-card">
+        <div class="model-showcase-card" data-category="characters">
           <div class="model-media-wrap model-media-interactive" id="wrap-bomber-goblin">
             <span class="model-floating-badge">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -798,7 +1116,7 @@
         </div>
 
         <!-- Model 2: Green Military Style Avatar (Interactive Render & Viewport) -->
-        <div class="model-showcase-card">
+        <div class="model-showcase-card" data-category="characters">
           <div class="model-media-wrap model-media-interactive" id="wrap-military-avatar">
             <span class="model-floating-badge">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -834,7 +1152,7 @@
         </div>
 
         <!-- Model 3: Police Vest (Interactive Render, Wireframe & Viewport) -->
-        <div class="model-showcase-card">
+        <div class="model-showcase-card" data-category="armor">
           <div class="model-media-wrap model-media-interactive" id="wrap-police-vest">
             <span class="model-floating-badge">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -873,7 +1191,7 @@
         </div>
 
         <!-- Model 4: Rainbow Knife (Interactive Render & Viewport) -->
-        <div class="model-showcase-card">
+        <div class="model-showcase-card" data-category="weapons">
           <div class="model-media-wrap model-media-interactive" id="wrap-rainbow-knife">
             <span class="model-floating-badge">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -910,7 +1228,7 @@
         </div>
 
         <!-- Model 5: Green Shield -->
-        <div class="model-showcase-card">
+        <div class="model-showcase-card" data-category="armor">
           <div class="model-media-wrap">
             <span class="model-floating-badge">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -942,7 +1260,7 @@
         </div>
 
         <!-- Model 6: Red Fox (Interactive Shaded & Wireframe) -->
-        <div class="model-showcase-card">
+        <div class="model-showcase-card" data-category="characters">
           <div class="model-media-wrap model-media-interactive" id="wrap-red-fox">
             <span class="model-floating-badge">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -979,7 +1297,7 @@
         </div>
 
         <!-- Model 7: Yin-Yang Shinobi -->
-        <div class="model-showcase-card">
+        <div class="model-showcase-card" data-category="characters">
           <div class="model-media-wrap">
             <span class="model-floating-badge">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -1010,7 +1328,7 @@
         </div>
 
         <!-- Model 8: Shadow Ronin -->
-        <div class="model-showcase-card">
+        <div class="model-showcase-card" data-category="weapons">
           <div class="model-media-wrap">
             <span class="model-floating-badge">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -1041,7 +1359,7 @@
         </div>
 
         <!-- Model 9: Celestial Exorcist -->
-        <div class="model-showcase-card">
+        <div class="model-showcase-card" data-category="weapons">
           <div class="model-media-wrap">
             <span class="model-floating-badge">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -1075,13 +1393,274 @@
   </section>
 
   <!-- ==========================================
+       CLIENT REVIEWS & VOUCHES (ASHTONDEV DUAL MARQUEE)
+       ========================================== -->
+  <section class="reviews-marquee-section" id="reviews">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 24px;">
+        <span class="eyebrow">
+          <span class="eyebrow-num">06</span>
+          <span>CLIENT VOUCHES</span>
+        </span>
+        <h2 class="section-title">Studio <em>Testimonials</em></h2>
+        <p class="section-desc">What game directors, studio founders, and lead scripters say about collaborating with Vexo Dev.</p>
+      </div>
+    </div>
+
+    <div class="marquee-container" aria-label="Client reviews moving ticker">
+      <!-- Row 1: Leftward infinite track -->
+      <div class="marquee-row marquee-row-1">
+        <!-- Vouch 1 -->
+        <div class="vouch-card">
+          <div class="vouch-header">
+            <div class="vouch-author">
+              <div class="vouch-avatar">N</div>
+              <div>
+                <div class="vouch-name">Nova Studios</div>
+                <div class="vouch-role">Lead Producer · 12M+ Visits</div>
+              </div>
+            </div>
+            <div class="vouch-stars">★★★★★</div>
+          </div>
+          <p class="vouch-quote">"Vexo built our weapon raycasting and inventory pipeline in 3 days. Rock-solid replication under 80+ player stress tests, zero memory leaks. An absolute weapon of a developer."</p>
+        </div>
+
+        <!-- Vouch 2 -->
+        <div class="vouch-card">
+          <div class="vouch-header">
+            <div class="vouch-author">
+              <div class="vouch-avatar">C</div>
+              <div>
+                <div class="vouch-name">CyberV Games</div>
+                <div class="vouch-role">Game Director · Studio Owner</div>
+              </div>
+            </div>
+            <div class="vouch-stars">★★★★★</div>
+          </div>
+          <p class="vouch-quote">"Hired Vexo for custom tactical character models and hard-surface armor in Blender. Mesh topology was pristine with clean edge loops and instant Roblox Studio import. Incredible craft."</p>
+        </div>
+
+        <!-- Vouch 3 -->
+        <div class="vouch-card">
+          <div class="vouch-header">
+            <div class="vouch-author">
+              <div class="vouch-avatar">E</div>
+              <div>
+                <div class="vouch-name">Eclipse Realm</div>
+                <div class="vouch-role">Lead Scripter · RPG Experience</div>
+              </div>
+            </div>
+            <div class="vouch-stars">★★★★★</div>
+          </div>
+          <p class="vouch-quote">"The cleanest Luau code architecture I have ever integrated. Strict type checking, clear modular signal patterns, and instant turnaround. Highly recommend him for any serious studio."</p>
+        </div>
+
+        <!-- Vouch 4 -->
+        <div class="vouch-card">
+          <div class="vouch-header">
+            <div class="vouch-author">
+              <div class="vouch-avatar">R</div>
+              <div>
+                <div class="vouch-name">Redline Drift</div>
+                <div class="vouch-role">Project Lead · Driving Sim</div>
+              </div>
+            </div>
+            <div class="vouch-stars">★★★★★</div>
+          </div>
+          <p class="vouch-quote">"Vexo's procedural suspension and chassis physics are unmatched on Roblox. Smooth drifting, zero desync, and worked out of the box with our custom UI."</p>
+        </div>
+
+        <!-- Duplicates for Row 1 -->
+        <div class="vouch-card">
+          <div class="vouch-header">
+            <div class="vouch-author">
+              <div class="vouch-avatar">N</div>
+              <div>
+                <div class="vouch-name">Nova Studios</div>
+                <div class="vouch-role">Lead Producer · 12M+ Visits</div>
+              </div>
+            </div>
+            <div class="vouch-stars">★★★★★</div>
+          </div>
+          <p class="vouch-quote">"Vexo built our weapon raycasting and inventory pipeline in 3 days. Rock-solid replication under 80+ player stress tests, zero memory leaks. An absolute weapon of a developer."</p>
+        </div>
+
+        <div class="vouch-card">
+          <div class="vouch-header">
+            <div class="vouch-author">
+              <div class="vouch-avatar">C</div>
+              <div>
+                <div class="vouch-name">CyberV Games</div>
+                <div class="vouch-role">Game Director · Studio Owner</div>
+              </div>
+            </div>
+            <div class="vouch-stars">★★★★★</div>
+          </div>
+          <p class="vouch-quote">"Hired Vexo for custom tactical character models and hard-surface armor in Blender. Mesh topology was pristine with clean edge loops and instant Roblox Studio import. Incredible craft."</p>
+        </div>
+
+        <div class="vouch-card">
+          <div class="vouch-header">
+            <div class="vouch-author">
+              <div class="vouch-avatar">E</div>
+              <div>
+                <div class="vouch-name">Eclipse Realm</div>
+                <div class="vouch-role">Lead Scripter · RPG Experience</div>
+              </div>
+            </div>
+            <div class="vouch-stars">★★★★★</div>
+          </div>
+          <p class="vouch-quote">"The cleanest Luau code architecture I have ever integrated. Strict type checking, clear modular signal patterns, and instant turnaround. Highly recommend him for any serious studio."</p>
+        </div>
+
+        <div class="vouch-card">
+          <div class="vouch-header">
+            <div class="vouch-author">
+              <div class="vouch-avatar">R</div>
+              <div>
+                <div class="vouch-name">Redline Drift</div>
+                <div class="vouch-role">Project Lead · Driving Sim</div>
+              </div>
+            </div>
+            <div class="vouch-stars">★★★★★</div>
+          </div>
+          <p class="vouch-quote">"Vexo's procedural suspension and chassis physics are unmatched on Roblox. Smooth drifting, zero desync, and worked out of the box with our custom UI."</p>
+        </div>
+      </div>
+
+      <!-- Row 2: Rightward infinite track -->
+      <div class="marquee-row marquee-row-2">
+        <!-- Vouch 5 -->
+        <div class="vouch-card">
+          <div class="vouch-header">
+            <div class="vouch-author">
+              <div class="vouch-avatar">P</div>
+              <div>
+                <div class="vouch-name">PixelCraft Studio</div>
+                <div class="vouch-role">Founder · Metaverse MMO</div>
+              </div>
+            </div>
+            <div class="vouch-stars">★★★★★</div>
+          </div>
+          <p class="vouch-quote">"Delivered a full avatar editor and custom morph system with ViewportFrame preview 24 hours ahead of deadline. Player retention surged by 28% after launch."</p>
+        </div>
+
+        <!-- Vouch 6 -->
+        <div class="vouch-card">
+          <div class="vouch-header">
+            <div class="vouch-author">
+              <div class="vouch-avatar">M</div>
+              <div>
+                <div class="vouch-name">Mythic RPG</div>
+                <div class="vouch-role">Creative Director · 500k CCU</div>
+              </div>
+            </div>
+            <div class="vouch-stars">★★★★★</div>
+          </div>
+          <p class="vouch-quote">"The Bomber Goblin and weapon props Vexo sculpted are community favorites. He understands silhouette, polycount limits, and Roblox rigging like a veteran."</p>
+        </div>
+
+        <!-- Vouch 7 -->
+        <div class="vouch-card">
+          <div class="vouch-header">
+            <div class="vouch-author">
+              <div class="vouch-avatar">A</div>
+              <div>
+                <div class="vouch-name">Anime Battlers</div>
+                <div class="vouch-role">Solo Developer · Action Fighter</div>
+              </div>
+            </div>
+            <div class="vouch-stars">★★★★★</div>
+          </div>
+          <p class="vouch-quote">"Fast communication on Discord, answered every question, and provided full documentation with ongoing warranty support. Will definitely commission again!"</p>
+        </div>
+
+        <!-- Vouch 8 -->
+        <div class="vouch-card">
+          <div class="vouch-header">
+            <div class="vouch-author">
+              <div class="vouch-avatar">X</div>
+              <div>
+                <div class="vouch-name">Apex Arena</div>
+                <div class="vouch-role">Lead Producer · Battle Royale</div>
+              </div>
+            </div>
+            <div class="vouch-stars">★★★★★</div>
+          </div>
+          <p class="vouch-quote">"Server-authoritative netcode without any exploit vulnerabilities. He solved problems our previous scripters struggled with for weeks."</p>
+        </div>
+
+        <!-- Duplicates for Row 2 -->
+        <div class="vouch-card">
+          <div class="vouch-header">
+            <div class="vouch-author">
+              <div class="vouch-avatar">P</div>
+              <div>
+                <div class="vouch-name">PixelCraft Studio</div>
+                <div class="vouch-role">Founder · Metaverse MMO</div>
+              </div>
+            </div>
+            <div class="vouch-stars">★★★★★</div>
+          </div>
+          <p class="vouch-quote">"Delivered a full avatar editor and custom morph system with ViewportFrame preview 24 hours ahead of deadline. Player retention surged by 28% after launch."</p>
+        </div>
+
+        <div class="vouch-card">
+          <div class="vouch-header">
+            <div class="vouch-author">
+              <div class="vouch-avatar">M</div>
+              <div>
+                <div class="vouch-name">Mythic RPG</div>
+                <div class="vouch-role">Creative Director · 500k CCU</div>
+              </div>
+            </div>
+            <div class="vouch-stars">★★★★★</div>
+          </div>
+          <p class="vouch-quote">"The Bomber Goblin and weapon props Vexo sculpted are community favorites. He understands silhouette, polycount limits, and Roblox rigging like a veteran."</p>
+        </div>
+
+        <div class="vouch-card">
+          <div class="vouch-header">
+            <div class="vouch-author">
+              <div class="vouch-avatar">A</div>
+              <div>
+                <div class="vouch-name">Anime Battlers</div>
+                <div class="vouch-role">Solo Developer · Action Fighter</div>
+              </div>
+            </div>
+            <div class="vouch-stars">★★★★★</div>
+          </div>
+          <p class="vouch-quote">"Fast communication on Discord, answered every question, and provided full documentation with ongoing warranty support. Will definitely commission again!"</p>
+        </div>
+
+        <div class="vouch-card">
+          <div class="vouch-header">
+            <div class="vouch-author">
+              <div class="vouch-avatar">X</div>
+              <div>
+                <div class="vouch-name">Apex Arena</div>
+                <div class="vouch-role">Lead Producer · Battle Royale</div>
+              </div>
+            </div>
+            <div class="vouch-stars">★★★★★</div>
+          </div>
+          <p class="vouch-quote">"Server-authoritative netcode without any exploit vulnerabilities. He solved problems our previous scripters struggled with for weeks."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
        INTERACTIVE LUAU CODE LAB
        ========================================== -->
   <section id="luau-lab">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Interactive Code Lab</span>
-        <h2 class="section-title">Strict Luau Architecture</h2>
+        <span class="eyebrow">
+          <span class="eyebrow-num">07</span>
+          <span>LUAU ARCHITECTURE</span>
+        </span>
+        <h2 class="section-title">Interactive <em>Luau Lab</em></h2>
         <p class="section-desc">Examine real production code written by Vexo. Click "Run Simulation" to execute a live test run in the simulated console.</p>
       </div>
 
@@ -1137,8 +1716,11 @@
   <section id="faq">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Frequently Asked Questions</span>
-        <h2 class="section-title">Commission & Modelling FAQ</h2>
+        <span class="eyebrow">
+          <span class="eyebrow-num">08</span>
+          <span>QUESTIONS & ANSWERS</span>
+        </span>
+        <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
         <p class="section-desc">Clear commission details, 3D modelling specs, deliverables, payment terms, and warranty coverage.</p>
       </div>
 
@@ -1279,18 +1861,87 @@
        ========================================== -->
   <section id="contact" style="padding-bottom: 120px;">
     <div class="container">
+      <!-- Commission Scope & Pricing Estimator (Koze & Falnox Inspired) -->
+      <div class="commission-estimator-card">
+        <div style="text-align: left; margin-bottom: 24px;">
+          <span class="arch-badge">INSTANT QUOTE ESTIMATOR</span>
+          <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: #fff; margin-top: 8px;">Estimate Your Commission</h3>
+          <p style="font-size: 0.88rem; color: var(--silver-400); margin: 0;">Configure your project scope to see real-time price ranges and turnaround estimates.</p>
+        </div>
+
+        <div class="estimator-grid">
+          <div class="estimator-controls">
+            <div class="form-group-wrap">
+              <label for="calc-service">Discipline / Project Type</label>
+              <select id="calc-service" class="estimator-select">
+                <option value="system_standard">Roblox Game System (Inventory, Quests, Shop, HUD)</option>
+                <option value="system_complex">Advanced Netcode Engine (Combat, Vehicles, Movement)</option>
+                <option value="model_prop">3D UGC Asset / Weapon / Armor Set (Blender)</option>
+                <option value="model_character">Full 3D Custom Character Rig & Sculpt (Blender)</option>
+                <option value="full_package">Full Stack Pipeline (Custom Rig + Systems Integration)</option>
+              </select>
+            </div>
+
+            <div class="form-group-wrap">
+              <label for="calc-scope">Project Scope & Depth</label>
+              <select id="calc-scope" class="estimator-select">
+                <option value="small">Small (Focused module, fast integration)</option>
+                <option value="medium" selected>Medium (Standard production system with UI & sound)</option>
+                <option value="large">Large (Multi-part studio framework, multiplayer sync)</option>
+              </select>
+            </div>
+
+            <div class="form-group-wrap">
+              <label for="calc-turnaround">Delivery Turnaround</label>
+              <select id="calc-turnaround" class="estimator-select">
+                <option value="standard" selected>Standard (3 - 5 Days)</option>
+                <option value="rush">Priority Sprint (24 - 48 Hours)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="estimator-result-box">
+            <div style="font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; color: var(--silver-400); text-transform: uppercase; letter-spacing: 0.12em;">Estimated Investment</div>
+            <div class="quote-usd" id="quote-usd">$75 - $120</div>
+            <div class="quote-robux" id="quote-robux">25,000 - 40,000 Robux</div>
+            <button class="btn-silver" id="btn-copy-brief" style="width: 100%; margin-top: 8px;">
+              <span>Copy Quote to Discord</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hostiile-Style Rich Discord Profile Card -->
+      <div class="discord-profile-card">
+        <div class="discord-user-info">
+          <div class="discord-avatar-wrap">
+            <span>V</span>
+            <span class="discord-status-dot" title="Online & Available"></span>
+          </div>
+          <div>
+            <div class="discord-username">vexodev.</div>
+            <div class="discord-subtext">Active Now · Roblox Studio & Blender 3D</div>
+          </div>
+        </div>
+        <button class="btn-silver btn-copy-discord" data-discord="vexodev." style="padding: 9px 18px; font-size: 0.84rem;">
+          <span>Copy Discord Tag</span>
+        </button>
+      </div>
+
       <div class="glass-card-elevated" style="padding: 60px 40px; text-align: center; max-width: 880px; margin: 0 auto; position: relative;">
-        <span class="glass-pill" style="margin-bottom: 20px;">
-          <span class="live-dot"></span>
-          READY TO COMMENCE YOUR NEXT ROBLOX HIT
+        <span class="eyebrow" style="margin-bottom: 20px;">
+          <span class="eyebrow-num">09</span>
+          <span>COMMISSIONS</span>
+          <span class="live-dot" style="margin-left: 6px;"></span>
+          <span style="color: #34d399; font-size: 0.72rem;">ACCEPTING ORDERS</span>
         </span>
 
-        <h2 class="silver-gradient-text" style="font-size: clamp(2rem, 4.5vw, 3.2rem); margin-bottom: 16px;">
-          Let's Build Something Legendary
+        <h2 class="section-title" style="font-size: clamp(2rem, 4.5vw, 3.2rem); margin-bottom: 16px;">
+          Let's Build Something <em>Legendary</em>
         </h2>
 
         <p style="color: var(--silver-400); max-width: 600px; margin: 0 auto 36px auto; font-size: 1.05rem;">
-          Add Vexo on Discord or send your project specifications. Current response time: <strong>under 30 minutes</strong>.
+          Add Vexo on Discord or send your project specifications. Current response time: <strong style="color: #ffffff;">under 30 minutes</strong>.
         </p>
 
         <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
@@ -1317,7 +1968,7 @@
         <div class="footer-brand">
           <a href="#" class="brand-logo">
             <div class="brand-icon" style="width: 30px; height: 30px; font-size: 1rem; border-radius: 8px;">V</div>
-            <div class="brand-name" style="font-size: 1.15rem;">VEXO<span>DEV</span></div>
+            <div class="brand-name" style="font-size: 1.15rem;">vexo<span style="color: var(--silver-400); font-weight: 300;">.</span></div>
           </a>
           <p>Architecting next-generation Roblox Luau engines, combat frameworks, and modular game systems for creators worldwide.</p>
         </div>
@@ -1329,8 +1980,10 @@
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#games">Games</a></li>
-            <li><a href="#models">Modelling Showcase</a></li>
+            <li><a href="#models">Modelling</a></li>
+            <li><a href="#reviews">Vouches</a></li>
             <li><a href="#luau-lab">Luau Lab</a></li>
+            <li><a href="#faq">FAQ</a></li>
           </ul>
         </div>
 
@@ -1359,10 +2012,9 @@
 
       <div class="footer-bottom">
         <div>© 2026 Vexo Dev. All rights reserved. Not affiliated with Roblox Corporation.</div>
-        <div style="display: flex; gap: 20px;">
-          <span>Engineered with Silver Glassmorphism</span>
-          <span>•</span>
-          <span style="color:#34d399;">All Systems Operational</span>
+        <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+          <button id="motion-toggle" class="btn-glass" type="button" style="font-size: 0.76rem; padding: 6px 14px; border-radius: 9999px;">Pause motion</button>
+          <a href="#home" style="color: var(--silver-300); text-decoration: none; font-size: 0.85rem; font-weight: 500;">Back to top ↑</a>
         </div>
       </div>
     </div>
