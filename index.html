@@ -135,30 +135,30 @@
         <!-- Right 3D Floating Showcase Scene (Interactive Collage) -->
         <div class="hero-scene-wrap">
           <div class="hero-collage-container">
-            <!-- Main Featured Card: Bomber Goblin -->
-            <div class="collage-card collage-card-main" onclick="location.href='#wrap-bomber-goblin'">
-              <img src="assets/models/bomber-goblin.png" alt="Bomber Goblin 3D Character" loading="eager">
+            <!-- Main Featured Card: 3D Tactical Suit -->
+            <div class="collage-card collage-card-main" onclick="location.href='#wrap-asset-1'">
+              <img src="assets/models/showcase-1.png" alt="3D Tactical Armor Asset" loading="eager">
               <div class="collage-card-info">
-                <span class="collage-card-title">Bomber Goblin</span>
-                <span class="collage-card-poly">4,860 Tris</span>
+                <span class="collage-card-title">Blender 3D Asset</span>
+                <span class="collage-card-poly">3,650 Tris</span>
               </div>
             </div>
 
-            <!-- Sub Card 1: Rainbow Knife -->
-            <div class="collage-card collage-card-sub1" onclick="location.href='#wrap-rainbow-knife'">
-              <img src="assets/models/rainbow-knife.png" alt="Rainbow Knife 3D Fantasy Weapon" loading="eager">
+            <!-- Sub Card 1: Katana Weapon -->
+            <div class="collage-card collage-card-sub1" onclick="location.href='#wrap-asset-4'">
+              <img src="assets/models/showcase-4.png" alt="3D Katana Weapon Asset" loading="eager">
               <div class="collage-card-info">
-                <span class="collage-card-title">Rainbow Dagger</span>
-                <span class="collage-card-poly">1,820 Tris</span>
+                <span class="collage-card-title">Blender 3D Asset</span>
+                <span class="collage-card-poly">1,650 Tris</span>
               </div>
             </div>
 
-            <!-- Sub Card 2: Red Fox -->
-            <div class="collage-card collage-card-sub2" onclick="location.href='#wrap-red-fox'">
-              <img src="assets/models/red-fox.png" alt="Red Fox 3D Stylized Pet" loading="eager">
+            <!-- Sub Card 2: Stylized Character -->
+            <div class="collage-card collage-card-sub2" onclick="location.href='#wrap-asset-3'">
+              <img src="assets/models/showcase-3.png" alt="3D Character Avatar Asset" loading="eager">
               <div class="collage-card-info">
-                <span class="collage-card-title">Red Fox Pet</span>
-                <span class="collage-card-poly">3,120 Tris</span>
+                <span class="collage-card-title">Blender 3D Asset</span>
+                <span class="collage-card-poly">4,180 Tris</span>
               </div>
             </div>
 
@@ -227,7 +227,7 @@
             <div class="stat-metric-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
             </div>
-            <div class="stat-metric-number">9+</div>
+            <div class="stat-metric-number">4</div>
             <div class="stat-metric-label">Showcase Assets</div>
             <div class="stat-metric-sub">Avatars, Weapons & Armor</div>
           </div>
@@ -294,77 +294,40 @@
       <!-- Serieko-Inspired Interactive Filter Toolbar -->
       <div class="work-toolbar">
         <div class="work-filters">
-          <button class="filter-btn active" data-filter="all" type="button">All <span class="filter-count">9</span></button>
-          <button class="filter-btn" data-filter="characters" type="button">Characters & Avatars <span class="filter-count">4</span></button>
-          <button class="filter-btn" data-filter="weapons" type="button">Weapons & Props <span class="filter-count">3</span></button>
-          <button class="filter-btn" data-filter="armor" type="button">Armor & Defense <span class="filter-count">2</span></button>
+          <button class="filter-btn active" data-filter="all" type="button">All <span class="filter-count">4</span></button>
+          <button class="filter-btn" data-filter="characters" type="button">Characters & Avatars <span class="filter-count">2</span></button>
+          <button class="filter-btn" data-filter="armor" type="button">Armor & Defense <span class="filter-count">1</span></button>
+          <button class="filter-btn" data-filter="weapons" type="button">Weapons & Props <span class="filter-count">1</span></button>
         </div>
       </div>
 
-      <!-- 3D Renders Showcase Grid -->
+      <!-- 3D Renders Showcase Grid (4 Featured Assets, Zero Names) -->
       <div class="modelling-showcase-grid">
-        <!-- Model 1: Bomber Goblin (Interactive Shaded & Wireframe) -->
-        <div class="model-showcase-card" data-category="characters">
-          <div class="model-media-wrap model-media-interactive" id="wrap-bomber-goblin">
+        <!-- Asset 1: Tactical Armor Suit -->
+        <div class="model-showcase-card" data-category="armor">
+          <div class="model-media-wrap model-media-interactive" id="wrap-asset-1">
             <span class="model-floating-badge">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
               Blender 3D
             </span>
             <div class="model-view-switch">
-              <button class="mv-btn active" type="button" onclick="setModelView(this, 'wrap-bomber-goblin', 'shaded')">Shaded</button>
-              <button class="mv-btn" type="button" onclick="setModelView(this, 'wrap-bomber-goblin', 'wireframe')">Wireframe</button>
+              <button class="mv-btn active" type="button" onclick="setModelView(this, 'wrap-asset-1', 'render')">Render</button>
+              <button class="mv-btn" type="button" onclick="setModelView(this, 'wrap-asset-1', 'viewport')">Viewport</button>
             </div>
-            <img src="assets/models/bomber-goblin.png" alt="Bomber Goblin 3D Character Model Shaded" class="model-img-layer img-shaded active" loading="lazy">
-            <img src="assets/models/bomber-goblin-wireframe.png" alt="Bomber Goblin 3D Character Topology Wireframe" class="model-img-layer img-wireframe" loading="lazy">
+            <img src="assets/models/showcase-1.png" alt="3D Tactical Combat Suit Render" class="model-img-layer img-render active" loading="lazy">
+            <img src="assets/models/green-military-avatar-blender.png" alt="3D Tactical Combat Suit Viewport" class="model-img-layer img-viewport" loading="lazy">
           </div>
           <div class="model-card-body">
-            <div class="model-category">Character Sculpt & Topology</div>
-            <h3 class="model-title">Bomber Goblin</h3>
-            <div class="model-specs-row">
-              <span>⚡ 4,860 Tris</span>
-              <span>•</span>
-              <span>💣 Bomb Props</span>
-              <span>•</span>
-              <span>📐 Clean Edge Loops</span>
-            </div>
-            <p class="model-card-desc">
-              Stylized fantasy goblin character sculpted in Blender featuring aviator leather helmet, brass goggles, strapped ordnance backpack, dynamic tongue-out expression, and skull-insignia fuse bombs. Clean topology optimized for rigging.
-            </p>
-            <div class="model-tag-list">
-              <span class="model-tag">Blender 3D</span>
-              <span class="model-tag">Quad Topology</span>
-              <span class="model-tag">Character Sculpt</span>
-              <span class="model-tag">Wireframe View</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Model 2: Green Military Style Avatar (Interactive Render & Viewport) -->
-        <div class="model-showcase-card" data-category="characters">
-          <div class="model-media-wrap model-media-interactive" id="wrap-military-avatar">
-            <span class="model-floating-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              Blender 3D
-            </span>
-            <div class="model-view-switch">
-              <button class="mv-btn active" type="button" onclick="setModelView(this, 'wrap-military-avatar', 'render')">Render</button>
-              <button class="mv-btn" type="button" onclick="setModelView(this, 'wrap-military-avatar', 'viewport')">Viewport</button>
-            </div>
-            <img src="assets/models/green-military-avatar.png" alt="Green Military Style Avatar 3D Studio Render" class="model-img-layer img-render active" loading="lazy">
-            <img src="assets/models/green-military-avatar-blender.png" alt="Green Military Style Avatar Blender 3D Viewport" class="model-img-layer img-viewport" loading="lazy">
-          </div>
-          <div class="model-card-body">
-            <div class="model-category">Tactical Armor & Hard-Surface</div>
-            <h3 class="model-title">Green Military Style Avatar</h3>
+            <div class="model-category">Tactical Combat Suit & Armor</div>
             <div class="model-specs-row">
               <span>⚡ 3,650 Tris</span>
               <span>•</span>
-              <span>🛡️ Pauldrons</span>
+              <span>🛡️ Ballistic Pauldrons</span>
               <span>•</span>
               <span>🪖 Visor Helmet</span>
             </div>
             <p class="model-card-desc">
-              Heavy tactical combat suit modeled for Roblox featuring olive-drab ballistic shoulder pauldrons, combat visor helmet with glass reflections, ammo pouch chest harness, and rear tactical cape.
+              Heavy tactical combat suit modeled in Blender for Roblox games. Engineered with olive-drab ballistic shoulder pauldrons, combat visor helmet with glass reflections, ammo pouch chest harness, and rear tactical cape. Optimized for R15 deformation.
             </p>
             <div class="model-tag-list">
               <span class="model-tag">Blender 3D</span>
@@ -375,240 +338,92 @@
           </div>
         </div>
 
-        <!-- Model 3: Police Vest (Interactive Render, Wireframe & Viewport) -->
-        <div class="model-showcase-card" data-category="armor">
-          <div class="model-media-wrap model-media-interactive" id="wrap-police-vest">
-            <span class="model-floating-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              Blender 3D
-            </span>
-            <div class="model-view-switch">
-              <button class="mv-btn active" type="button" onclick="setModelView(this, 'wrap-police-vest', 'render')">Render</button>
-              <button class="mv-btn" type="button" onclick="setModelView(this, 'wrap-police-vest', 'wireframe')">Wireframe</button>
-              <button class="mv-btn" type="button" onclick="setModelView(this, 'wrap-police-vest', 'viewport')">Viewport</button>
-            </div>
-            <img src="assets/models/police-vest.png" alt="Police Vest 3D Tactical Body Armor Studio Render" class="model-img-layer img-render active" loading="lazy">
-            <img src="assets/models/police-vest-wireframe.png" alt="Police Vest 3D Mesh Topology Wireframe" class="model-img-layer img-wireframe" loading="lazy">
-            <img src="assets/models/police-vest-blender.png" alt="Police Vest Blender 3D Viewport Angle" class="model-img-layer img-viewport" loading="lazy">
-          </div>
-          <div class="model-card-body">
-            <div class="model-category">Tactical Gear & Body Armor</div>
-            <h3 class="model-title">Police Vest</h3>
-            <div class="model-specs-row">
-              <span>⚡ 2,980 Tris</span>
-              <span>•</span>
-              <span>📻 Radio Holster</span>
-              <span>•</span>
-              <span>🛡️ MOLLE Webbing</span>
-            </div>
-            <p class="model-card-desc">
-              High-detail tactical ballistic body armor modelled for Roblox law enforcement & tactical roleplay. Features authentic 'POLIZEI' chest insignia, hi-vis yellow reflective safety bands, tactical radio holster, multiple utility pouches, and heavy-duty zipper hardware.
-            </p>
-            <div class="model-tag-list">
-              <span class="model-tag">Blender 3D</span>
-              <span class="model-tag">Hard Surface</span>
-              <span class="model-tag">Law Enforcement</span>
-              <span class="model-tag">Roblox Rigged</span>
-              <span class="model-tag">Wireframe View</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Model 4: Rainbow Knife (Interactive Render & Viewport) -->
-        <div class="model-showcase-card" data-category="weapons">
-          <div class="model-media-wrap model-media-interactive" id="wrap-rainbow-knife">
-            <span class="model-floating-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              Blender 3D
-            </span>
-            <div class="model-view-switch">
-              <button class="mv-btn active" type="button" onclick="setModelView(this, 'wrap-rainbow-knife', 'render')">Render</button>
-              <button class="mv-btn" type="button" onclick="setModelView(this, 'wrap-rainbow-knife', 'viewport')">Viewport</button>
-            </div>
-            <img src="assets/models/rainbow-knife.png" alt="Rainbow Knife 3D Fantasy Weapon Studio Render" class="model-img-layer img-contain img-render active" loading="lazy">
-            <img src="assets/models/rainbow-knife-blender.png" alt="Rainbow Knife Blender 3D Viewport Angle" class="model-img-layer img-contain img-viewport" loading="lazy">
-          </div>
-          <div class="model-card-body">
-            <div class="model-category">Melee Weapon & Custom Charm</div>
-            <h3 class="model-title">Rainbow Knife</h3>
-            <div class="model-specs-row">
-              <span>⚡ 1,820 Tris</span>
-              <span>•</span>
-              <span>🎀 Ribbon Guard</span>
-              <span>•</span>
-              <span>🐾 Cat Paw Charm</span>
-            </div>
-            <p class="model-card-desc">
-              Stylized magical fantasy dagger modelled for Roblox combat and UGC. Features an iridescent rainbow galaxy crystal blade, sculpted satin ribbon guard with golden heart jewel and flower motif, and dangling gold chain with an adorable cat paw pommel charm.
-            </p>
-            <div class="model-tag-list">
-              <span class="model-tag">Blender 3D</span>
-              <span class="model-tag">UGC Weapon</span>
-              <span class="model-tag">Galaxy Shader</span>
-              <span class="model-tag">Cat Paw Charm</span>
-              <span class="model-tag">Low-Poly Rig</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Model 5: Green Shield -->
-        <div class="model-showcase-card" data-category="armor">
-          <div class="model-media-wrap">
-            <span class="model-floating-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              Blender 3D
-            </span>
-            <img src="assets/models/green-shield.png" alt="Green Shield 3D Fantasy Paladin Armor Model" class="model-img-contain" loading="lazy">
-          </div>
-          <div class="model-card-body">
-            <div class="model-category">Fantasy Armor & Defense</div>
-            <h3 class="model-title">Green Shield</h3>
-            <div class="model-specs-row">
-              <span>⚡ 2,450 Tris</span>
-              <span>•</span>
-              <span>✨ Emerald Core</span>
-              <span>•</span>
-              <span>🛡️ Gold Filigree</span>
-            </div>
-            <p class="model-card-desc">
-              Heroic fantasy paladin knight shield modeled for Roblox RPG combat and defense. Handcrafted with emerald green enameled faceplates, sculpted baroque gold trim with crowned defensive spikes, blackened iron crest, and a radiant starburst emerald gemstone.
-            </p>
-            <div class="model-tag-list">
-              <span class="model-tag">Blender 3D</span>
-              <span class="model-tag">Hard Surface</span>
-              <span class="model-tag">Fantasy RPG</span>
-              <span class="model-tag">Roblox Rigged</span>
-              <span class="model-tag">PBR Shading</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Model 6: Red Fox (Interactive Shaded & Wireframe) -->
+        <!-- Asset 2: Clay Sculpt & Mesh Topology -->
         <div class="model-showcase-card" data-category="characters">
-          <div class="model-media-wrap model-media-interactive" id="wrap-red-fox">
+          <div class="model-media-wrap" id="wrap-asset-2">
             <span class="model-floating-badge">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
               Blender 3D
             </span>
-            <div class="model-view-switch">
-              <button class="mv-btn active" type="button" onclick="setModelView(this, 'wrap-red-fox', 'shaded')">Shaded</button>
-              <button class="mv-btn" type="button" onclick="setModelView(this, 'wrap-red-fox', 'wireframe')">Wireframe</button>
-            </div>
-            <img src="assets/models/red-fox.png" alt="Red Fox 3D Stylized Pet Creature Shaded" class="model-img-layer img-contain img-shaded active" loading="lazy">
-            <img src="assets/models/red-fox-wireframe.png" alt="Red Fox 3D Mesh Topology Wireframe" class="model-img-layer img-contain img-wireframe" loading="lazy">
+            <img src="assets/models/showcase-2.png" alt="3D Clay Character Mesh Sculpt" class="model-img-contain" loading="lazy">
           </div>
           <div class="model-card-body">
-            <div class="model-category">Creature Sculpt & Rigged Pet</div>
-            <h3 class="model-title">Red Fox</h3>
-            <div class="model-specs-row">
-              <span>⚡ 3,120 Tris</span>
-              <span>•</span>
-              <span>🦊 Quad Rig</span>
-              <span>•</span>
-              <span>🔥 Runic Flame Tail</span>
-            </div>
-            <p class="model-card-desc">
-              Stylized low-poly fantasy fox pet creature sculpted in Blender for Roblox RPG and simulator games. Hand-painted with warm flame gradients, crystalline head crystals, glowing amber eyes, glowing runic leg emblems, and clean deformation-ready edge topology.
-            </p>
-            <div class="model-tag-list">
-              <span class="model-tag">Blender 3D</span>
-              <span class="model-tag">Creature Sculpt</span>
-              <span class="model-tag">Quad Topology</span>
-              <span class="model-tag">Roblox Pet</span>
-              <span class="model-tag">Wireframe View</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Model 7: Yin-Yang Shinobi -->
-        <div class="model-showcase-card" data-category="characters">
-          <div class="model-media-wrap">
-            <span class="model-floating-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              Blender 3D
-            </span>
-            <img src="assets/models/model-1.png" alt="Yin-Yang Shinobi Character Model" loading="lazy">
-          </div>
-          <div class="model-card-body">
-            <div class="model-category">Roblox UGC & Layered Clothing</div>
-            <h3 class="model-title">Yin-Yang Shinobi Avatar</h3>
-            <div class="model-specs-row">
-              <span>⚡ 3,840 Tris</span>
-              <span>•</span>
-              <span>🦴 R15 Rigged</span>
-              <span>•</span>
-              <span>🎨 PBR Ink Wash</span>
-            </div>
-            <p class="model-card-desc">
-              Custom stylized anime ninja avatar featuring dual-tone split black & white spiked hair, authentic ink-wash painted haori kimono, layered cloth wrap, and ceremonial waist knot.
-            </p>
-            <div class="model-tag-list">
-              <span class="model-tag">Layered Clothing</span>
-              <span class="model-tag">Custom Hair Rig</span>
-              <span class="model-tag">Weight Painted</span>
-              <span class="model-tag">Sub-4k Tris</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Model 8: Shadow Ronin -->
-        <div class="model-showcase-card" data-category="weapons">
-          <div class="model-media-wrap">
-            <span class="model-floating-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              Blender 3D
-            </span>
-            <img src="assets/models/model-2.png" alt="Shadow Ronin Character Model" loading="lazy">
-          </div>
-          <div class="model-card-body">
-            <div class="model-category">Modular Character & Outfit</div>
-            <h3 class="model-title">Shadow Ronin Kimono</h3>
+            <div class="model-category">Clay Sculpt & Mesh Topology</div>
             <div class="model-specs-row">
               <span>⚡ 3,420 Tris</span>
               <span>•</span>
-              <span>👟 Custom Geta</span>
+              <span>📐 Clean Edge Loops</span>
               <span>•</span>
-              <span>📱 Mobile Budget</span>
+              <span>🥋 Layered Robe Mesh</span>
             </div>
             <p class="model-card-desc">
-              Charcoal gradient samurai combat robe designed with thick braided cord sash, pleated hakama silhouette, and authentic Japanese wooden geta sandals engineered for zero clipping.
+              Untextured viewport mesh sculpt showcasing clean quad edge flow, sculpted anime hair volume, and layered cloth silhouette. Modeled with optimized topology ready for character rigging and texture projection in Roblox Studio.
             </p>
             <div class="model-tag-list">
-              <span class="model-tag">Hard-Surface Geta</span>
-              <span class="model-tag">Cage Deformation</span>
-              <span class="model-tag">Low-Poly Mesh</span>
+              <span class="model-tag">Blender 3D</span>
+              <span class="model-tag">Clay Sculpt</span>
+              <span class="model-tag">Quad Topology</span>
               <span class="model-tag">Roblox Import</span>
             </div>
           </div>
         </div>
 
-        <!-- Model 9: Celestial Exorcist -->
-        <div class="model-showcase-card" data-category="weapons">
-          <div class="model-media-wrap">
+        <!-- Asset 3: Stylized Character Avatar -->
+        <div class="model-showcase-card" data-category="characters">
+          <div class="model-media-wrap" id="wrap-asset-3">
             <span class="model-floating-badge">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
               Blender 3D
             </span>
-            <img src="assets/models/model-3.png" alt="Celestial Exorcist Character Model" loading="lazy">
+            <img src="assets/models/showcase-3.png" alt="3D Stylized Anime Character Avatar" class="model-img-contain" loading="lazy">
           </div>
           <div class="model-card-body">
-            <div class="model-category">Combat Bundle & Equipment</div>
-            <h3 class="model-title">Celestial Exorcist Set</h3>
+            <div class="model-category">Stylized Character & UGC Avatar</div>
             <div class="model-specs-row">
-              <span>⚡ 4,210 Tris</span>
+              <span>⚡ 4,180 Tris</span>
               <span>•</span>
-              <span>🗡️ Dual Katanas</span>
+              <span>✨ Ornate Halo & Kimono</span>
               <span>•</span>
-              <span>📜 Scroll Trunk</span>
+              <span>🎨 Hand-Painted Textures</span>
             </div>
             <p class="model-card-desc">
-              Full fantasy battle attire with flowing silver hair, crimson-trimmed shoulder mantle, sacred wooden sealing scroll trunk, dual back-mounted katanas, and fluttering prayer talismans.
+              Intricate anime fantasy warrior avatar sculpted and textured in Blender. Features spiky layered silver hair, gold-ringed halo accessory, detailed ink-and-gold ceremonial robes, hanging talisman ornaments, and full R15 humanoid weight painting.
             </p>
             <div class="model-tag-list">
-              <span class="model-tag">Dual Sheathed Katanas</span>
-              <span class="model-tag">Back Equipment</span>
-              <span class="model-tag">Floating Ribbons</span>
-              <span class="model-tag">UGC Bundle</span>
+              <span class="model-tag">Blender 3D</span>
+              <span class="model-tag">PBR Shading</span>
+              <span class="model-tag">UGC Avatar</span>
+              <span class="model-tag">Layered Clothing</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Asset 4: Fantasy Katana Weapon -->
+        <div class="model-showcase-card" data-category="weapons">
+          <div class="model-media-wrap" id="wrap-asset-4">
+            <span class="model-floating-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              Blender 3D
+            </span>
+            <img src="assets/models/showcase-4.png" alt="3D Stylized Katana Melee Weapon" class="model-img-contain" loading="lazy">
+          </div>
+          <div class="model-card-body">
+            <div class="model-category">Fantasy Melee & Combat Weapon</div>
+            <div class="model-specs-row">
+              <span>⚡ 1,650 Tris</span>
+              <span>•</span>
+              <span>⚔️ Slender Katana Blade</span>
+              <span>•</span>
+              <span>🎗️ Ribbed Guard & Hilt</span>
+            </div>
+            <p class="model-card-desc">
+              Custom fantasy katana blade sculpted for Roblox combat mechanics and UGC catalog. Features a tapered curved edge with chipped battle-worn detailing, faceted bronze hilt guard, and wrapped tsuka grip optimized for sub-2k polycount.
+            </p>
+            <div class="model-tag-list">
+              <span class="model-tag">Blender 3D</span>
+              <span class="model-tag">Melee Weapon</span>
+              <span class="model-tag">Optimized LOD</span>
+              <span class="model-tag">Roblox UGC</span>
             </div>
           </div>
         </div>
