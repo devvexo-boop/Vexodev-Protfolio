@@ -391,46 +391,54 @@
   // Commission Scope & Quote Builder (Koze & Falnox Inspired)
   // ==========================================
   const serviceSelect = document.getElementById('calc-service');
-  const speedSelect = document.getElementById('calc-speed');
+  const scopeSelect = document.getElementById('calc-scope');
+  const turnaroundSelect = document.getElementById('calc-turnaround');
   const quoteUSD = document.getElementById('quote-usd');
   const quoteRobux = document.getElementById('quote-robux');
   const btnBrief = document.getElementById('btn-copy-brief');
 
   const pricing = {
-    'combat': { usd: '$120 - $220', rbx: '35K - 65K R$' },
-    'movement': { usd: '$80 - $140', rbx: '25K - 40K R$' },
-    'avatar': { usd: '$100 - $180', rbx: '30K - 55K R$' },
-    'full-game': { usd: '$350 - $650+', rbx: '100K - 200K+ R$' },
-    'optim': { usd: '$70 - $130', rbx: '20K - 38K R$' }
+    'model_prop': { usd: '$40 - $75', rbx: '12K - 22K R$' },
+    'model_armor': { usd: '$75 - $130', rbx: '22K - 40K R$' },
+    'model_character': { usd: '$110 - $200', rbx: '32K - 60K R$' },
+    'model_bundle': { usd: '$250 - $480+', rbx: '75K - 145K+ R$' }
   };
 
   function updateQuote() {
     if (!serviceSelect || !quoteUSD || !quoteRobux) return;
-    const s = serviceSelect.value || 'combat';
-    const rate = pricing[s] || pricing['combat'];
+    const s = serviceSelect.value || 'model_character';
+    const rate = pricing[s] || pricing['model_character'];
     quoteUSD.textContent = rate.usd;
     quoteRobux.textContent = rate.rbx;
   }
 
-  if (serviceSelect && speedSelect) {
+  if (serviceSelect) {
     serviceSelect.addEventListener('change', () => {
       updateQuote();
-      window.playSfx('click');
+      if (typeof window.playSfx === 'function') window.playSfx('click');
     });
-    speedSelect.addEventListener('change', () => {
-      window.playSfx('click');
-    });
+    if (scopeSelect) {
+      scopeSelect.addEventListener('change', () => {
+        if (typeof window.playSfx === 'function') window.playSfx('click');
+      });
+    }
+    if (turnaroundSelect) {
+      turnaroundSelect.addEventListener('change', () => {
+        if (typeof window.playSfx === 'function') window.playSfx('click');
+      });
+    }
     updateQuote();
   }
 
   if (btnBrief) {
     btnBrief.addEventListener('click', () => {
-      const serviceText = serviceSelect ? serviceSelect.options[serviceSelect.selectedIndex].text : 'Core System';
-      const speedText = speedSelect ? speedSelect.options[speedSelect.selectedIndex].text : 'Standard Delivery';
-      const brief = `Hey Vexo! I'd like to commission you for: ${serviceText} (${speedText}). Found your portfolio on https://devvexo-boop.github.io/Vexodev-Protfolio/`;
+      const serviceText = serviceSelect ? serviceSelect.options[serviceSelect.selectedIndex].text : '3D Model Commission';
+      const scopeText = scopeSelect ? scopeSelect.options[scopeSelect.selectedIndex].text : 'Medium Scope';
+      const turnaroundText = turnaroundSelect ? turnaroundSelect.options[turnaroundSelect.selectedIndex].text : 'Standard Delivery';
+      const brief = `Hey Vexo! I'd like to commission you for: ${serviceText} [${scopeText} | ${turnaroundText}]. Found your portfolio on https://devvexo-boop.github.io/Vexodev-Protfolio/`;
       navigator.clipboard.writeText(brief).then(() => {
-        window.playSfx('chime');
-        window.showToast("📋 Project brief copied! Paste into Discord DM.");
+        if (typeof window.playSfx === 'function') window.playSfx('chime');
+        if (typeof window.showToast === 'function') window.showToast("📋 3D commission brief copied! Paste into Discord DM.");
       });
     });
   }
